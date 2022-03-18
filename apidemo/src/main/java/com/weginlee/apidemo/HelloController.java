@@ -13,7 +13,7 @@ public class HelloController {
     public String hello() {
         // Use the http://localhost:8080/hello?name=Sophia to try
         // return String.format("Welcome to the world of SpringBoot, %s !", name);
-        return String.format("Hello World!");
+        return String.format("Hello Wegin!");
     }
 
 }

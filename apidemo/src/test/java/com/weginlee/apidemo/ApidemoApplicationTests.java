@@ -52,8 +52,9 @@ public class ApidemoApplicationTests {
 
 		request = get( "/hello" );
 		mockMvc.perform(request)
+				.andDo(print())
 				.andExpect(status().isOk())
-				.andExpect(content().string(equalTo("Hello World!")));
+				.andExpect(content().string(equalTo("Hello Wegin!")));
 		//.andExpect(content().string(equalTo("Welcome to the world of SpringBoot, Wegin")));
 
 	}
