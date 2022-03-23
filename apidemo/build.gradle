@@ -15,14 +15,13 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	// enable or disable this to observer what else beans are included and loaded.
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
 	implementation 'org.awaitility:awaitility'
 	testImplementation ('org.springframework.boot:spring-boot-starter-test')  // test default is JUnit 5
 
 
-	// JUnit 5 依賴設定
-	// testImplementation 'org.junit.jupiter:junit-jupiter-api' // JUnit 5 API 介面
-	// testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine' // JUnit 5 測試框架的實作
 }
 
 tasks.named('test') {
