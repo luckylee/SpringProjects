@@ -17,6 +17,7 @@ dependencies {
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	// enable or disable this to observer what else beans are included and loaded.
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 
 	implementation 'org.awaitility:awaitility'
 	testImplementation ('org.springframework.boot:spring-boot-starter-test')  // test default is JUnit 5

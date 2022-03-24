@@ -15,8 +15,12 @@ import java.util.Arrays;
 @EnableScheduling
 public class ApidemoApplication {
 
+	//Bean definitions
+
 	public static void main(String[] args) {
-		SpringApplication.run(ApidemoApplication.class, args);
+		SpringApplication application = new SpringApplication(ApidemoApplication.class);
+		// ... customize application settings here
+		application.run(args);
 	}
 
 	@Bean
