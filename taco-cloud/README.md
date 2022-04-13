@@ -8,7 +8,7 @@ These are examples I practice on the books below
 
 
 ### Chapter 1 in Action 
-
+It is intro to develop a simple taco cloud spring mvc application. 
 
 
 ### Chapter 2 in Action
