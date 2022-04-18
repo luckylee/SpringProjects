@@ -1,11 +1,16 @@
-package com.example.tacos;
+package com.example.tacos.web;
 
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import com.example.tacos.Ingredient;
+import com.example.tacos.Taco;
+import com.example.tacos.TacoOrder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +19,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import lombok.extern.slf4j.Slf4j;
 import com.example.tacos.Ingredient.*;
+
+import javax.validation.Valid;
 
 @Slf4j      // auto-config the log
 @Controller
@@ -65,6 +72,22 @@ public class DesignTacoController {
         
         log.info("Handle the get request and show the design.html template");
         return "design";
+    }
+
+    @PostMapping
+    public String processTaco(@Valid Taco taco,
+                              Errors errors,
+                              @ModelAttribute TacoOrder tacoOrder) {
+
+        if (errors.hasErrors()) {
+            log.debug("Processing taco errors: " + errors.toString());
+            return "design";
+        }
+
+        tacoOrder.addTaco(taco);
+        log.info("Processing taco: {}", taco);
+
+        return "redirect:/orders/current";
     }
 
     private Iterable<Ingredient> filterByType(
