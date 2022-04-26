@@ -1,16 +1,21 @@
-package com.example.tacos;
+package com.example.tacos.domain;
 
 import java.util.List;
 import java.util.ArrayList;
-import lombok.Data;
-import org.hibernate.validator.constraints.CreditCardNumber;
 
+import lombok.Data;
+
+import javax.persistence.*;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
 
 @Data
+@Entity
 public class TacoOrder {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     @NotBlank(message="Delivery name is required")
     private String deliveryName;
@@ -28,15 +33,21 @@ public class TacoOrder {
     private String deliveryZip;
 
     // @CreditCardNumber(message="Not a valid credit card number")
+    @NotBlank(message="credit card number is required")
     private String ccNumber;
 
     // @Pattern(regexp="^(0[1-9]|1[0-2])([\\/])([2-9][0-9])$",
     //        message="Must be formatted MM/YY")
+    @NotBlank(message="Expiration date is required")
     private String ccExpiration;
 
-    // @Digits(integer=3, fraction=0, message="Invalid CVV")
+    @Digits(integer=3, fraction=0, message="Invalid CVV")
     private String ccCVV;
 
+    // It explains the relationship between tables, the tacos are all specific to this one order.
+    // Moreover, the cascade attribute is set to CascadeType.ALL so that if the order is deleted,
+    // its related tacos will also be deleted.
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Taco> tacos = new ArrayList<>();
 
     public void addTaco(Taco taco) {

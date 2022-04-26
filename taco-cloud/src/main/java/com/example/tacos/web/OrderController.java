@@ -1,7 +1,7 @@
 package com.example.tacos.web;
 
-import com.example.tacos.Taco;
-import com.example.tacos.TacoOrder;
+import com.example.tacos.domain.Taco;
+import com.example.tacos.domain.TacoOrder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;

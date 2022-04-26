@@ -5,9 +5,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.example.tacos.Ingredient;
-import com.example.tacos.Taco;
-import com.example.tacos.TacoOrder;
+import com.example.tacos.domain.Ingredient;
+import com.example.tacos.domain.Taco;
+import com.example.tacos.domain.TacoOrder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import lombok.extern.slf4j.Slf4j;
-import com.example.tacos.Ingredient.*;
+import com.example.tacos.domain.Ingredient.*;
 
 import javax.validation.Valid;
 

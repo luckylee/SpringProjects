@@ -3,11 +3,11 @@ package com.example.tacos.web;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.example.tacos.Ingredient;
+import com.example.tacos.domain.Ingredient;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
-import com.example.tacos.Ingredient.Type;
+import com.example.tacos.domain.Ingredient.Type;
 
 @Component
 public class IngredientByIdConverter implements Converter<String, Ingredient> {
