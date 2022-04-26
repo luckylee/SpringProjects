@@ -1,5 +1,6 @@
 package com.example.tacos.web;
 
+import com.example.tacos.data.OrderRepository;
 import com.example.tacos.domain.Taco;
 import com.example.tacos.domain.TacoOrder;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,12 @@ import java.util.List;
 @RequestMapping("/orders")
 @SessionAttributes("tacoOrder")
 public class OrderController {
+
+    private OrderRepository orderRepo;
+
+    public OrderController(OrderRepository orderRepo) {
+        this.orderRepo = orderRepo;
+    }
 
     @GetMapping("/current")
     public String orderForm(@ModelAttribute TacoOrder tacoOrder) {
@@ -40,6 +47,8 @@ public class OrderController {
         }
 
         log.info("Order submitted: {}", order);
+        // Save order to table.
+        orderRepo.save(order);
         sessionStatus.setComplete();
 
         return "redirect:/";
