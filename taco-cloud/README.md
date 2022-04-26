@@ -11,5 +11,13 @@ These are examples I practice on the books below
 It is intro to develop a simple taco cloud spring mvc application. 
 
 
-### Chapter 2 in Action
+### Chapter 2 in Action (Spring Web MVC)
+Practice the spring-boot Web and MVC to build up the taco cloud web site
+
+### Chapter 3 in Action (SQL DB)
 The following guides illustrate how to use some features concretely:
+Practice the spring-data (JDBC and JPA, relational DB) to connect the taco-cloud repo and Web MVC
+* Dig out more customize queries for JPA repository, DSL and @Query
+* Dig out how Spring Data validates the tables relations in repo and default CRUD queres. 
+
+### Chapter 4 in Action (NoSQL DB)

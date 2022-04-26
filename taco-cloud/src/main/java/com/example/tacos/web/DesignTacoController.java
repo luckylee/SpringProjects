@@ -1,29 +1,22 @@
 package com.example.tacos.web;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import com.example.tacos.data.IngredientRepository;
 import com.example.tacos.domain.Ingredient;
+import com.example.tacos.domain.Ingredient.Type;
 import com.example.tacos.domain.Taco;
 import com.example.tacos.domain.TacoOrder;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.SessionAttributes;
-
-import lombok.extern.slf4j.Slf4j;
-import com.example.tacos.domain.Ingredient.*;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j      // auto-config the log
 @Controller
