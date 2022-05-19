@@ -7,4 +7,6 @@ import com.example.tacos.domain.Ingredient;
 public interface IngredientRepository
         extends CrudRepository<Ingredient, String> {
 
+
+
 }

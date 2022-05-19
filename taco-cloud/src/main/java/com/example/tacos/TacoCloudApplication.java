@@ -37,7 +37,6 @@ public class TacoCloudApplication {
 		};
 	}
 
-
 	@Bean
 	// List all the beans/components in the initialization.
 	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {

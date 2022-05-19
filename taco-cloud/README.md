@@ -8,8 +8,6 @@ These are examples I practice on the books below
 
 ## Part I: Fundamental Spring
 
-----
-
 ### Chapter 1 in Action 
 It is intro to develop a simple taco cloud spring mvc application. 
 
@@ -31,8 +29,6 @@ Practice the spring-data (JDBC and JPA, relational DB) to connect the taco-cloud
 
 ## Part II: Integrated Spring
 
-----
-
 ### Chapter 7 and 8 in Action (Create REST service and its security)
 * Difference between @RestController and @Controller
 
@@ -43,10 +39,10 @@ Practice the spring-data (JDBC and JPA, relational DB) to connect the taco-cloud
 
 
 ## Part III: Reactive Spring
-* It is better to have Java 8, Lambda, Stream concepts. 
+
+* It is better to have the concepts of Java 8 on Lambda, Stream, Asyc IO. 
 * Compare Kafka Stream feature with Reactive Spring
 
-----
 ### Chapter 11 in Action (Introducing Reactor)
 
 
